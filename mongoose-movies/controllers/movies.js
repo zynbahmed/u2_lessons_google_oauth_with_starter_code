@@ -1,4 +1,5 @@
 const Movie = require('../models/movie');
+const Performer = require('../models/performer');
 
 module.exports = {
   index,
@@ -13,8 +14,19 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-  const movie = await Movie.findById(req.params.id);
-  res.render('movies/show', { title: 'Movie Detail', movie });
+  const movie = await Movie.findById(req.params.id).populate('cast');
+  const performers = await Performer.find({});
+  const movieCast = movie.cast;
+  //create a new array of just the names from the movieCast
+  const castNames = movieCast.map((castMember) => castMember.name);
+   
+  const availablePerformers = performers.filter((performer)=> {
+    console.log(typeof performer._id)
+    if(!castNames.includes(performer.name)) {
+      return performer;
+    }
+  })
+  res.render('movies/show', { title: 'Movie Detail', movie, availablePerformers });
 }
 
 function newMovie(req, res) {

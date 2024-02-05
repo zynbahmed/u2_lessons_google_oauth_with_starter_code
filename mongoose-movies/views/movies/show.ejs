@@ -54,5 +54,30 @@
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>
-  
+
+<!-- Display a dropdown of available performers -->
+<br><br><h2>Add a performer</h2>
+<form id="add-review-form" method="POST"
+  action="/movies/<%= movie._id %>/performers">
+  <select name="performerId">
+    <% availablePerformers.forEach((performer) => { %>
+      <option value="<%= performer._id %>"><%= performer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Performer">
+</form>
+
+<!-- Display the cast -->
+<% if (movie.cast.length) { %>
+  <h3>Performers</h3>
+  <ul>
+    <% movie.cast.forEach((performer) => { %>
+      <li><%= performer.name %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No Performers Yet</h5>
+<% } %>
+
+
 <%- include('../partials/footer') %>
