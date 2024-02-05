@@ -71,7 +71,7 @@ Here's an ERD that documents the final data model for mongoose-movies:
 
 <img src="https://i.imgur.com/CVTFHMJ.png" width="100%">
 
-## 6. Referencing _Performers_ in the _Movie_ Model
+## 4. Referencing _Performers_ in the _Movie_ Model
 
 Let's update the `cast` property in the `Movie` model (**models/movie.js**) to hold the `ObjectId`s of performer documents:
 
@@ -131,7 +131,7 @@ ObjectId
 <hr>
 </details>
 
-## 7. Associating Movies and Performers
+## 5. Associating Movies and Performers
 
 Now that we've refactored the `cast` property in `movieSchema`, we're ready to implement the M:M relationship between _movies_ and _performers_.
 
