@@ -16,11 +16,10 @@
 1. Setup
 2. Review the Starter Code
 3. Create a CRUD Helper Module
-4. Compute the _Average Rating_ of the Reviews
-5. The `mongoose-movies` Data Model
-6. Referencing _Performers_ in the _Movie_ Model
-7. Associating Movies and Performers
-8. Essential Questions
+4. The `mongoose-movies` Data Model
+5. Referencing _Performers_ in the _Movie_ Model
+6. Associating Movies and Performers
+7. Essential Questions
 
 ## 1. Setup
 
@@ -111,55 +110,10 @@ We'll then run the CRUD helper with the following command:
 node crud-helper.js 
 ```
 
-## 4. Compute the _Average Rating_ of the Reviews
-
-The demo of the completed mongoose-movies app computed and displayed an _average rating_ for reviews in the movie's detail page:
-
-<img src="https://i.imgur.com/CoFuOOW.png">
-	
-All it takes is adding some EJS to **views/movies/show.ejs**.
-
-Add the new markup under each comment:
-
-```html
-<tbody>
-  <!-- Yes, we can define variables! -->
-  <% let total = 0 %>
-  <% movie.reviews.forEach(function(r) { %>
-    <!-- Accumulate the total rating -->
-    <% total += r.rating %>
-    <tr>
-      <td><%= r.createdAt.toLocaleDateString() %></td>
-      <td><%= r.content %></td>
-      <td><%= r.rating %></td>
-    </tr>
-  <% }); %>
-  <!-- Add a row to display the avg AFTER the forEach iteration  -->
-  <tr>
-    <td colspan="2"></td>
-    <td><strong><%= (total / movie.reviews.length).toFixed(1) %></strong></td>
-  </tr>
-</tbody>
-```
-
 Cool!
 
-<img src="https://i.imgur.com/pK21nxL.png">
 
-Although we just used the amazing power of EJS, typically it's the controller's responsibility to gather/compute data and pass it to views to be rendered.
-
-<details>
-<summary>
-👀 Do you need to sync your code?
-</summary>
-<hr>
-
-**`git reset --hard origin/sync-12-avg-rating`**
-
-<hr>
-</details>
-
-## 5. The `mongoose-movies` Data Model
+## 4. The `mongoose-movies` Data Model
 
 We are going to implement the following data relationship:
 
