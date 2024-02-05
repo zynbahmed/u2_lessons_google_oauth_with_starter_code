@@ -169,7 +169,7 @@ Be sure to use a template literal (backticks)
 
 Refactoring the redirect is done! Now for some fun!
 
-### _AAU, when viewing a movie's detail page, I want to see a list of the cast's performers' name and birth date_
+### _AAU, when viewing a movie's detail page, I want to see a list of the cast's performers' names.
 
 Thinking about what it's going to take to implement the above user story, answer the following questions...
 
