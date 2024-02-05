@@ -15,11 +15,10 @@
 
 1. Setup
 2. Review the Starter Code
-3. Create a CRUD Helper Module
-4. The `mongoose-movies` Data Model
-5. Referencing _Performers_ in the _Movie_ Model
-6. Associating Movies and Performers
-7. Essential Questions
+3. The `mongoose-movies` Data Model
+4. Referencing _Performers_ in the _Movie_ Model
+5. Associating Movies and Performers
+6. Essential Questions
 
 ## 1. Setup
 
@@ -53,67 +52,7 @@ Chevy Chase  10/8/1943
 Bill Murray  9/21/1950
 ```
 
-## 3. Create a CRUD Helper Module
-
-### CRUD Data Externally to the Application
-
-At times you might need to CRUD data "outside" of the application.
-
-Well, that time is now because we need to "reset" all of the movie documents' `cast` property to an empty array.
-
-To do this, we're going to create a **crud-helper.js** module and load it within a Node REPL...
-
-### Create **crud-helper.js**
-
-Although **crud-helper.js** will not run as part of the app, it needs to be able to connect to the database and access the models.
-
-Creating it in the project's root folder makes sense:
-
-```
-touch crud-helper.js
-```
-
-Copy/paste the following code with comments:
-
-```js
-// crud-helper.js
-
-// Used to perform CRUD external to the application
-
-// If the db connection string is in a .env file, we need
-// to read in those env variables just like in server.js
-require('dotenv').config();
-// Connect to the database
-require('./config/database');
-
-// Require the app's Mongoose models
-const Movie = require('./models/movie');
-
-// Function to clear the cast arrays of all existing movies
-async function clearCastArrays() {
-  try {
-    // Clear the cast arrays of all existing movies
-    const result = await Movie.updateMany({}, { cast: [] });
-    console.log(result);
-  } catch (error) {
-    console.error('Error clearing cast arrays:', error);
-  }
-}
-
-// Directly execute the functions
-clearCastArrays();
-```
-
-We'll then run the CRUD helper with the following command:
-
-```
-node crud-helper.js 
-```
-
-Cool!
-
-
-## 4. The `mongoose-movies` Data Model
+## 3. The `mongoose-movies` Data Model
 
 We are going to implement the following data relationship:
 
