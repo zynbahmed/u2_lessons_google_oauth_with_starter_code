@@ -133,10 +133,6 @@ ObjectId
 
 ## 5. Associating Movies and Performers
 
-Now that we've refactored the `cast` property in `movieSchema`, we're ready to implement the M:M relationship between _movies_ and _performers_.
-
-But first, a quick refactor...
-
 ### 👉 You Do - Redirect to Movie `show` Functionality <small>(1 min)</small>
 
 Currently, when a new movie is created the user is being redirected to the movies' `index` functionality...
