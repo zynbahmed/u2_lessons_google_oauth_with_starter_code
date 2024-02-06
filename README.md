@@ -184,6 +184,8 @@ If an application needs to access more than a user's basic profile, the **scope*
 
 Yes, OAuth is complex. But not to worry, we don't have to know all of the nitty gritty details in order to take advantage of it because we will be using PassportJS middleware that will handle most of the "OAuth dance" for us.
 
+Still confused?  Check out [this link](https://blog.postman.com/what-is-oauth-2-0/) for more info. 
+
 ### A Playful Way to Understand how Oauth Works
 
 Imagine Nabeel and Salman are students who want to access a super cool club (OAuth-protected resources), but they need special VIP passes (tokens) to get in. Here's how it goes:
