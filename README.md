@@ -1,5 +1,5 @@
  
-<img src="https://i.imgur.com/y42RtQC.jpg" width="600">
+<img src="https://i.imgur.com/ls8J7jU.jpg" width="60%">
 
 # OAuth Authentication<br>with<br>Express & Passport
 
