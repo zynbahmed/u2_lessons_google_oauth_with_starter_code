@@ -1538,8 +1538,8 @@ router.post('/movies/:movieId/performers', ensureLoggedIn, performersCtrl.addToC
 Now you're ready to start your project and implement OAuth authentication before any other CRUD functionality.
 
 
-<img src="https://i.imgur.com/413VjkQ.jpg" width="60%">
-
+<img src="https://i.imgur.com/wZrc2BM.png" width="60%">
+ 
 ## 9. 💪 Challenge Exercise (optional)
 
 As an optional challenge exercise, use the [Guide to User-Centric CRUD using Express & Mongoose](https://gist.github.com/jim-clark/a714016bab26fad52106f6b2490e3eb7) to help you implement the following user story:
