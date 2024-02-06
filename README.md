@@ -460,6 +460,20 @@ Before we install Passport and a strategy, we need to install the [`express-sess
 
 This middleware helps the server remember a user's browser session by using a session id stored in a cookie. Passport uses this session to save important data for looking up users in the database. 
 
+In the context of Passport middleware, cookies are often used to maintain a user's session and authentication state across multiple HTTP requests. When a user logs in, Passport typically serializes the user information into a session, and this serialized user information is stored in a cookie.
+
+#### Step-by-step overview of the process:
+
+1. **Serialization:** When a user logs in, Passport serializes the user information. Serialization involves converting the user object into a format that can be easily stored and later reconstructed.
+
+2. **Cookie Storage:** The serialized user information is then stored in a cookie. This cookie is sent to the user's browser and is usually set to expire after a certain period. The cookie is often signed or encrypted to ensure its integrity and security.
+
+3. **Subsequent Requests:** In subsequent requests, the user's browser automatically includes the cookie containing the serialized user information. Passport middleware, specifically the `passport.initialize()` and `passport.session()` middleware, is responsible for deserializing the user information from the cookie and attaching it to the request object.
+
+4. **Deserialization:** Passport deserializes the user information by extracting it from the cookie. The deserialized user object is then attached to the `request.user` property, making it accessible to route handlers.
+
+5. **Authentication State:** The `request.user` property now holds the authenticated user's information, allowing the application to check if the user is authenticated and retrieve additional details from the user object stored in the database.
+
 Think of the session middleware as the organizer at a party. When a guest (user) arrives, the organizer hands them a special wristband (cookie with a session id). This wristband is the express-session middleware at work. It helps the server (organizer) recognize the guest and remember details about them throughout the party (user's interactions with the website).
 
 So, when you install the express-session middleware, you essentially set up this wristband system. The middleware takes care of creating and managing these special wristbands (cookies with session ids) for each visitor. It enables your Express backend to handle and remember user sessions seamlessly.
