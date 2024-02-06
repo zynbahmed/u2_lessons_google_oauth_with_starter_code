@@ -628,16 +628,6 @@ Time for a few questions...
 <hr>
 </details>
 
-<details>
-<summary>
-👀 Do you need to sync your code?
-</summary>
-<hr>
-
-**`git reset --hard origin/sync-16-sessions`**
-
-<hr>
-</details>
 
 ### Step 5 - Install Passport
 
@@ -960,16 +950,6 @@ passport.deserializeUser(async function(id, cb) {
 
 Let's do another error check.
 
-<details>
-<summary>
-👀 Do you need to sync your code?
-</summary>
-<hr>
-
-**`git reset --hard origin/sync-17-passport`**
-
-<hr>
-</details>
 
 ### Step 9 - Define Routes for Authentication
 
@@ -1139,18 +1119,10 @@ There's a `class="login"` in use - add the following to the bottom of **public/s
 
 We've finally got to the point where you can test out our app's authentication!
 
-May the force be with us!
+For Frodo!
 
-<details>
-<summary>
-👀 Do you need to sync your code?
-</summary>
-<hr>
+<img src="https://i.imgur.com/413VjkQ.jpg" width="60%">
 
-**`git reset --hard origin/sync-18-login-out`**
-
-<hr>
-</details>
 
 ## 7. Code the User Stories
 
@@ -1321,17 +1293,6 @@ That should take care of our first user story - try it out!
 <img src="https://i.imgur.com/zwYPXj4.png">
 
 Yes, the UX is not that great because of the full-page refresh, but we'll address that when we develop single-page apps with React.
-
-<details>
-<summary>
-👀 Do you need to sync your code?
-</summary>
-<hr>
-
-**`git reset --hard origin/sync-19-first-user-story`**
-
-<hr>
-</details>
 
 ### Code the Next User Story
 
@@ -1576,16 +1537,8 @@ router.post('/movies/:movieId/performers', ensureLoggedIn, performersCtrl.addToC
 
 Now you're ready to start your project and implement OAuth authentication before any other CRUD functionality.
 
-<details>
-<summary>
-👀 Do you need to sync your code?
-</summary>
-<hr>
 
-**`git reset --hard origin/sync-20-finish`**
-
-<hr>
-</details>
+<img src="https://i.imgur.com/413VjkQ.jpg" width="60%]>
 
 ## 9. 💪 Challenge Exercise (optional)
 
