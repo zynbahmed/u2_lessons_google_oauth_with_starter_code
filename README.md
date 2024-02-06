@@ -1538,7 +1538,7 @@ router.post('/movies/:movieId/performers', ensureLoggedIn, performersCtrl.addToC
 Now you're ready to start your project and implement OAuth authentication before any other CRUD functionality.
 
 
-<img src="https://i.imgur.com/413VjkQ.jpg" width="60%>
+<img src="https://i.imgur.com/413VjkQ.jpg" width="60%">
 
 ## 9. 💪 Challenge Exercise (optional)
 
