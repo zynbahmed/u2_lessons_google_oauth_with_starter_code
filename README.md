@@ -296,7 +296,7 @@ Time to register our app...
 
 <img src="https://i.imgur.com/dgKSFOG.png">
 
-> Note: The project name must be globally unique, so Google will append and additional id to the name you provide.
+> Note: The project name must be globally unique, so Google will append an additional id to the name you provide.
 
 - It might take a bit to create the project.  When done, click SELECT PROJECT:
 
