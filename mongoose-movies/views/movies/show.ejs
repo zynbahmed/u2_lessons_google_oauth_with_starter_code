@@ -14,41 +14,49 @@
   <!-- end cast list -->
 </section>
 <!-- add to cast form below this comment -->
-
-<br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/movies/<%= movie._id %>/reviews">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select>
-  <input type="submit" value="Add Review">
-</form>
+<% if (user) { %>
+  <br><br><h2>Reviews</h2>
+  <form id="add-review-form" method="POST"
+    action="/movies/<%= movie._id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Review">
+  </form>
+<% } %>
 
 <% if (movie.reviews.length) { %>
   <table>
     <thead>
       <tr>
+        <th>User</th>
         <th>Date</th>
         <th>Review</th>
         <th>Rating</th>
       </tr>
     </thead>
     <tbody>
+      <% let total = 0 %>
       <% movie.reviews.forEach(function(r) { %>
+        <% total += r.rating %>
         <tr>
-          <!-- .toLocaleDateString() provides a more friendly date format -->
+          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td><%= r.rating %></td>
         </tr>
       <% }); %>
+      <tr>
+        <td colspan="3"></td>
+        <td><strong><%= (total / movie.reviews.length).toFixed(1) %></strong></td>
+      </tr>
     </tbody>
   </table>
 <% } else { %>
@@ -56,16 +64,18 @@
 <% } %>
 
 <!-- Display a dropdown of available performers -->
-<br><br><h2>Add a performer</h2>
-<form id="add-review-form" method="POST"
-  action="/movies/<%= movie._id %>/performers">
-  <select name="performerId">
-    <% availablePerformers.forEach((performer) => { %>
-      <option value="<%= performer._id %>"><%= performer.name %></option> 
-    <% }); %>
-  </select>
-  <input type="submit" value="Add Performer">
-</form>
+<% if (user) { %>
+  <br><br><h2>Add a performer</h2>
+  <form id="add-review-form" method="POST"
+    action="/movies/<%= movie._id %>/performers">
+    <select name="performerId">
+      <% availablePerformers.forEach((performer) => { %>
+        <option value="<%= performer._id %>"><%= performer.name %></option> 
+      <% }); %>
+    </select>
+    <input type="submit" value="Add Performer">
+  </form>
+<% } %>
 
 <!-- Display the cast -->
 <% if (movie.cast.length) { %>
