@@ -9,6 +9,7 @@ module.exports = {
 };
 
 async function index(req, res) {
+  console.log("this is the logged in user", req.user)
   const movies = await Movie.find({});
   res.render('movies/index', { title: 'All Movies', movies });
 }
